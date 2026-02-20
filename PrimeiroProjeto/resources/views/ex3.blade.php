@@ -2,8 +2,8 @@
 
 @section('conteudo')
 
-<h1>Exercício 1</h1>
-<form method="post" action="/resposta">
+<h1>Exercício 3</h1>
+<form method="post" action="/resp3">
     @CSRF
 <div class="mb-3">
               <label for="numero1" class="form-label">Informe o primeiro valor:</label>
@@ -15,8 +15,8 @@
 <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 
-@isset($soma)
-<p class="text-success">O valor da soma é {{$soma}}</p>
+@isset($mult)
+<p class="text-success">O valor da multiplicação é {{$mult}}</p>
 @endisset
 
 @endsection
