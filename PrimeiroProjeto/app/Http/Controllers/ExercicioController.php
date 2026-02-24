@@ -46,4 +46,33 @@ class ExercicioController extends Controller{
         }else $div = $numero1 / $numero2;
         return view('ex4',['div' => $div]);
     }
+/// 
+    public function exibirFormulario5(){
+        return view('ex5');
+    }
+    public function calcularMedia(Request $r){
+        $numero1 = $r->input('numero1');
+        $numero2 = $r->input('numero2');
+        $numero3 = $r->input('numero3');
+        $media = ($numero1+$numero2+$numero3)/3;
+        return view('ex5',['media' => $media]);
+    }
+///
+    public function exibirFormulario6(){
+        return view('ex6');
+    }
+    public function calcularTemp(Request $r){
+        $temp = $r->input('temp');
+        $tempf=($temp*1.8)+32;
+        return view('ex6',['tempf' => $tempf]);
+    }
+///
+        public function exibirFormulario7(){
+        return view('ex7');
+    }
+    public function calcularTempC(Request $r){
+        $temp = $r->input('temp');
+        $tempc=($temp-32)/1.8;
+        return view('ex7',['tempc' => $tempc]);
+    }
 }

@@ -19,3 +19,12 @@ Route::post('/resp3', [ExercicioController::class, 'calcularMult']);
 
 Route::get('/ex4', [ExercicioController::class, 'exibirFormulario4']);
 Route::post('/resp4', [ExercicioController::class, 'calcularDiv']);
+
+Route::get('/ex5', [ExercicioController::class, 'exibirFormulario5']);
+Route::post('/resp5', [ExercicioController::class, 'calcularMedia']);
+
+Route::get('/ex6', [ExercicioController::class, 'exibirFormulario6']);
+Route::post('/resp6', [ExercicioController::class, 'calcularTemp']);
+
+Route::get('/ex7', [ExercicioController::class, 'exibirFormulario7']);
+Route::post('/resp7', [ExercicioController::class, 'calcularTempC']);
