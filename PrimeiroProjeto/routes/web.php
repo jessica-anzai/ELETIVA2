@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ExercicioController;
@@ -28,3 +29,11 @@ Route::post('/resp6', [ExercicioController::class, 'calcularTemp']);
 
 Route::get('/ex7', [ExercicioController::class, 'exibirFormulario7']);
 Route::post('/resp7', [ExercicioController::class, 'calcularTempC']);
+
+Route::get('/ex8', [ExercicioController::class, 'exibirFormulario8']);
+Route::post('/resp8', [ExercicioController::class, 'calcularAreaRet']);
+
+Route::get('/ex9', [ExercicioController::class, 'exibirFormulario9']);
+Route::post('/resp9', [ExercicioController::class, 'calcularAreaCirc']);
+
+Route::resource('/categorias',CategoriaController::class);

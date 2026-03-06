@@ -75,4 +75,26 @@ class ExercicioController extends Controller{
         $tempc=($temp-32)/1.8;
         return view('ex7',['tempc' => $tempc]);
     }
+///
+    //calcularAreaRet
+    public function exibirFormulario8(){
+        return view('ex8');
+    }
+    public function calcularAreaRet(Request $r){
+        $altura = $r->input('altura');
+        $largura = $r->input('largura');
+        $area = $altura*$largura;
+        return view('ex8',['area' => $area]);
+    }
+
+///
+    //calcularAreaRet
+    public function exibirFormulario9(){
+        return view('ex9');
+    }
+    public function calcularAreaCirc(Request $r){
+        $raio = $r->input('raio');
+        $areacirc = 3.14*($raio^2);
+        return view('ex9',['areacirc' => $areacirc]);
+    }
 }
