@@ -144,4 +144,115 @@ class ExercicioController extends Controller{
         $cm = $metro * 100;
         return view('ex13',['cm' => $cm]);
     }
+
+    //calcularMI
+    public function exibirFormulario14(){
+        return view('ex14');
+    }
+    public function calcularMI(Request $r){
+        $km = $_POST['km'];
+
+        $mi = $km * 0.621371;
+        return view('ex14',['mi' => $mi]);
+    }
+
+    //calcularIMC
+    public function exibirFormulario15(){
+        return view('ex15');
+    }
+    public function calcularIMC(Request $r){
+        $peso = $_POST['peso'];
+        $altura = $_POST['altura'];
+
+        $imc = $peso / ($altura**2);
+
+        if ($imc < 18.5) {
+            $texto = 'Você está abaixo do peso';
+            return view('ex15',['imc' => $imc],['texto' => $texto]);
+        }
+        elseif (18.5 < $imc && $imc < 24.9){
+            $texto = 'Você está no peso ideal';
+            return view('ex15',['imc' => $imc],['texto' => $texto]);
+        }
+        elseif ($imc > 25 && $imc < 29.9){
+            $texto = 'Você está sobrepeso';
+            return view('ex15',['imc' => $imc],['texto' => $texto]);
+        }
+        elseif ($imc > 30){
+            $texto = 'Você está obeso';
+            return view('ex15',['imc' => $imc],['texto' => $texto]);
+        }
+    }
+
+    //calcularDesconto
+    public function exibirFormulario16(){
+        return view('ex16');
+    }
+    public function calcularDesconto(Request $r){   
+        $preco = $_POST['preco'];
+        $desconto = $_POST['desconto'];
+
+        $percentual = $preco * ($desconto/100);
+
+        $valorFinal = $preco - $percentual;
+
+        return view('ex16',['valorFinal' => $valorFinal]);
+    }  
+    
+
+    //calcularJurosSimples
+    public function exibirFormulario17(){
+        return view('ex17');
+    }
+    public function calcularJurosSimples(Request $r){   
+        $valor = $_POST['valor'];
+        $juros = $_POST['juros'];
+        $periodo = $_POST['periodo'];
+
+        $valorFinal = $valor * ($juros/100) * $periodo;
+
+        return view('ex17',['valorFinal' => $valorFinal]);
+    }  
+
+    //calcularJurosComposto
+    public function exibirFormulario18(){
+        return view('ex18');
+    }
+    public function calcularJurosComposto(Request $r){   
+        $valor = $_POST['valor'];
+        $juros = $_POST['juros'];
+        $periodo = $_POST['periodo'];
+
+        $valorFinal = $valor * (($juros/100)+1) ** $periodo;
+
+        return view('ex17',['valorFinal' => $valorFinal]);
+    }  
+
+    //calcularHorasMinutosSegundos
+    public function exibirFormulario19(){
+        return view('ex19');
+    }
+    public function calcularHorasMinutosSegundos(Request $r){   
+        $dias = $_POST['dias'];
+
+        $hora = $dias * 24;
+        $minuto = $hora * 60;
+        $segundo = $minuto * 60;
+
+        return view('ex19',['hora' => $hora, 'minuto' => $minuto, 'segundo' => $segundo]);
+    }
+
+    //calcularVelocidadeMedia
+    public function exibirFormulario20(){
+        return view('ex20');
+    }
+    public function calcularVelocidadeMedia(Request $r){   
+        $distancia = $_POST['distancia'];
+        $tempo = $_POST['tempo'];
+
+        $velMedia = $distancia / $tempo;
+
+        return view('ex20',['velMedia' => $velMedia]);
+    }
+    
 }

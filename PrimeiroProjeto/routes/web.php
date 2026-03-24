@@ -48,4 +48,25 @@ Route::post('/resp12', [ExercicioController::class, 'calcularPotencia']);
 Route::get('/ex13', [ExercicioController::class, 'exibirFormulario13']);
 Route::post('/resp13', [ExercicioController::class, 'calcularCM']);
 
+Route::get('/ex14', [ExercicioController::class, 'exibirFormulario14']);
+Route::post('/resp14', [ExercicioController::class, 'calcularMI']);
+
+Route::get('/ex15', [ExercicioController::class, 'exibirFormulario15']);
+Route::post('/resp15', [ExercicioController::class, 'calcularIMC']);
+
+Route::get('/ex16', [ExercicioController::class, 'exibirFormulario16']);
+Route::post('/resp16', [ExercicioController::class, 'calcularDesconto']);
+
+Route::get('/ex17', [ExercicioController::class, 'exibirFormulario17']);
+Route::post('/resp17', [ExercicioController::class, 'calcularJurosSimples']);
+
+Route::get('/ex18', [ExercicioController::class, 'exibirFormulario18']);
+Route::post('/resp18', [ExercicioController::class, 'calcularJurosComposto']);
+
+Route::get('/ex19', [ExercicioController::class, 'exibirFormulario19']);
+Route::post('/resp19', [ExercicioController::class, 'calcularHorasMinutosSegundos']);
+
+Route::get('/ex20', [ExercicioController::class, 'exibirFormulario20']);
+Route::post('/resp20', [ExercicioController::class, 'calcularVelocidadeMedia']);
+
 Route::resource('/categorias',CategoriaController::class);
