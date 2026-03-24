@@ -36,4 +36,16 @@ Route::post('/resp8', [ExercicioController::class, 'calcularAreaRet']);
 Route::get('/ex9', [ExercicioController::class, 'exibirFormulario9']);
 Route::post('/resp9', [ExercicioController::class, 'calcularAreaCirc']);
 
+Route::get('/ex10', [ExercicioController::class, 'exibirFormulario10']);
+Route::post('/resp10', [ExercicioController::class, 'calcularPerimetroRet']);
+
+Route::get('/ex11', [ExercicioController::class, 'exibirFormulario11']);
+Route::post('/resp11', [ExercicioController::class, 'calcularPerimetroCirc']);
+
+Route::get('/ex12', [ExercicioController::class, 'exibirFormulario12']);
+Route::post('/resp12', [ExercicioController::class, 'calcularPotencia']);
+
+Route::get('/ex13', [ExercicioController::class, 'exibirFormulario13']);
+Route::post('/resp13', [ExercicioController::class, 'calcularCM']);
+
 Route::resource('/categorias',CategoriaController::class);

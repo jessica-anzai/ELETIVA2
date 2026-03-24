@@ -3,7 +3,7 @@
 @section('conteudo')
 
 <h1>Exercício 8 - Área do retângulo</h1>
-<form method="post" action="/resp8">
+<form method="post" action="/resp9">
     @CSRF
 <div class="mb-3">
               <label for="raio" class="form-label">Informe o raio:</label>

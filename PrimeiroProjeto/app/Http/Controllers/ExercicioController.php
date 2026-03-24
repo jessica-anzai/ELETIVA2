@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
+
 class ExercicioController extends Controller{
     public function exibirFormulario(){
         return view('exercicio');
@@ -94,7 +95,53 @@ class ExercicioController extends Controller{
     }
     public function calcularAreaCirc(Request $r){
         $raio = $r->input('raio');
-        $areacirc = 3.14*($raio^2);
+        $areacirc = M_PI * pow($raio, 2);
         return view('ex9',['areacirc' => $areacirc]);
+    }
+
+    //calcularPerimetroRet
+    public function exibirFormulario10(){
+        return view('ex10');
+    }
+    public function calcularPerimetroRet(Request $r){
+        $altura = $_POST['altura'];
+        $largura = $_POST['largura'];
+
+        $periRet = $altura *2 + $largura *2;
+        return view('ex10',['periRet' => $periRet]);
+    }
+
+     //calcularPerimetroCirc
+    public function exibirFormulario11(){
+        return view('ex11');
+    }
+    public function calcularPerimetroCirc(Request $r){
+        $raio = $_POST['raio'];
+
+        $periCir = 2*M_PI*$raio;
+        return view('ex11',['periCir' => $periCir]);
+    }
+
+    //calcularPotencia
+    public function exibirFormulario12(){
+        return view('ex12');
+    }
+    public function calcularPotencia(Request $r){
+        $base = $_POST['base'];
+        $expoente = $_POST['expoente'];
+
+        $potencia = pow($base, $expoente);
+        return view('ex12',['potencia' => $potencia]);
+    }
+
+    //calcularCM
+    public function exibirFormulario13(){
+        return view('ex13');
+    }
+    public function calcularCM(Request $r){
+        $metro = $_POST['metro'];
+
+        $cm = $metro * 100;
+        return view('ex13',['cm' => $cm]);
     }
 }
